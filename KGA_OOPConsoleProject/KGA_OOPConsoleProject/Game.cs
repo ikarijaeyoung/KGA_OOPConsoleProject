@@ -18,7 +18,7 @@ namespace KGA_OOPConsoleProject
 
             while(gameOver == false)
             {
-                Console.SetCursorPosition(0, 0);
+                Console.Clear();
 
                 curScene.Render();
                 curScene.Input();
@@ -28,10 +28,6 @@ namespace KGA_OOPConsoleProject
             End();
         }
 
-        public static void ChangeScene()
-        {
-            curScene = [];
-        }
 
         public static void Start()
         {
@@ -40,7 +36,7 @@ namespace KGA_OOPConsoleProject
 
             sceneDic = new();
             sceneDic.Add("Title", new TitleScene());
-            sceneDic.Add("Made by", new MadeBy());
+            sceneDic.Add("Made By", new MadeBy());
 
             curScene = sceneDic["Title"];
         }
@@ -48,6 +44,10 @@ namespace KGA_OOPConsoleProject
         public static void End()
         {
 
+        }
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
         }
     }
 }

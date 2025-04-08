@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject.Scenes
 {
-    public class MadeBy : Scene
+    public class Level01 : Scene
     {
-
         public override void Render()
         {
-            Console.WriteLine("\t만든이 : 정재영");
+            
         }
+
         public override void Input()
         {
-            Console.ReadKey(true);
+            
         }
 
         public override void Update()
         {
-            Game.ChangeScene("Title");
+            
         }
     }
 }
