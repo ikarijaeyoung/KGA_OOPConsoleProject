@@ -8,11 +8,14 @@
         public void PrintPlayer()
         {
             Console.SetCursorPosition(position.x, position.y);
-            Console.WriteLine("P");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine('P');
+            Console.ResetColor();
         }
         public void Move(ConsoleKey input)
         {
-            Vector2 nextPos = position;
+            // Vector2 nextPos = position; 이전에 이거 썼다가 오류남
+            Vector2 nextPos = new Vector2(position.x, position.y);
 
             switch (input)
             {
@@ -29,11 +32,14 @@
                     nextPos.x++;
                     break;
             }
-
-            if (map[nextPos.x, nextPos.y] == true)
+            
+            if (nextPos.y >= 0 && nextPos.y < map.GetLength(0)
+             && nextPos.x >= 0 && nextPos.x < map.GetLength(1)
+             && map[nextPos.y, nextPos.x] == true)
             {
                 position = nextPos;
             }
+            
         }
     }
 }

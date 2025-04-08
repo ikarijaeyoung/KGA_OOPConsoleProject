@@ -31,7 +31,7 @@
                 }
             }
 
-            Game.Player.position = new Vector2(1, 1);
+            Game.Player.position = new Vector2(8, 1);
             Game.Player.map = map;
         }
 
@@ -59,11 +59,11 @@
                 {
                     if (map[y, x] == true)
                     {
-                        Console.Write(" ");
+                        Console.Write(' ');
                     }
                     else
                     {
-                        Console.Write("#");
+                        Console.Write('#');
                     }
                 }
                 Console.WriteLine();
