@@ -24,6 +24,7 @@ namespace KGA_OOPConsoleProject.Scenes
 
         public override void Update()
         {
+            Console.Clear();
             switch (input)
             {
                 case ConsoleKey.Enter:

@@ -3,30 +3,36 @@
     public class Player
     {
         public Vector2 position;
+        public bool[,] map;
 
         public void PrintPlayer()
         {
             Console.SetCursorPosition(position.x, position.y);
-            Console.WriteLine("○");
+            Console.WriteLine("P");
         }
         public void Move(ConsoleKey input)
         {
+            Vector2 nextPos = position;
+
             switch (input)
             {
                 case ConsoleKey.UpArrow:
-                    position.y--;
+                    nextPos.y--;
                     break;
                 case ConsoleKey.DownArrow:
-                    position.y++;
+                    nextPos.y++;
                     break;
                 case ConsoleKey.LeftArrow:
-                    position.x--;
-                    position.x--;
+                    nextPos.x--;
                     break;
                 case ConsoleKey.RightArrow:
-                    position.x++;
-                    position.x++;
+                    nextPos.x++;
                     break;
+            }
+
+            if (map[nextPos.x, nextPos.y] == true)
+            {
+                position = nextPos;
             }
         }
     }

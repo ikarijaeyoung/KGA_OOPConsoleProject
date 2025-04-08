@@ -10,16 +10,16 @@
         {
             mapData = new string[]
             {
-                "■■■■■■■■■■", //10개
-                "■        ■",
-                "■        ■",
-                "■        ■",
-                "■        ■",
-                "■        ■",
-                "■        ■",
-                "■        ■",
-                "■        ■",
-                "■■■■■■■■■■"
+                "##########", //10개
+                "#        #",
+                "#        #",
+                "#        #",
+                "#        #",
+                "#        #",
+                "#        #",
+                "#        #",
+                "#        #",
+                "##########"
             };
 
             map = new bool[10, 10];
@@ -27,11 +27,12 @@
             {
                 for (int x = 0; x < map.GetLength(1); x++)
                 {
-                    map[y, x] = mapData[y][x] == '■' ? false : true;
+                    map[y, x] = mapData[y][x] == '#' ? false : true;
                 }
             }
 
-            Game.Player.position = new Vector2(2, 1);
+            Game.Player.position = new Vector2(1, 1);
+            Game.Player.map = map;
         }
 
         public override void Render()
@@ -58,11 +59,11 @@
                 {
                     if (map[y, x] == true)
                     {
-                        Console.Write("  ");
+                        Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write("■");
+                        Console.Write("#");
                     }
                 }
                 Console.WriteLine();
