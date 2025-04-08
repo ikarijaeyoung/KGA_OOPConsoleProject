@@ -29,7 +29,7 @@ namespace KGA_OOPConsoleProject.Scenes
                 case ConsoleKey.Enter:
                     Game.ChangeScene("Made By");
                     break;
-                case ConsoleKey.DownArrow:
+                case ConsoleKey.UpArrow:
                     Game.ChangeScene("TitleSceneToStart");
                     break;
             }
