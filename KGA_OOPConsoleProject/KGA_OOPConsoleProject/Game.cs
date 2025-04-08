@@ -1,4 +1,5 @@
-﻿using KGA_OOPConsoleProject.Scenes;
+﻿using KGA_OOPConsoleProject.Maps;
+using KGA_OOPConsoleProject.Scenes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,8 +36,9 @@ namespace KGA_OOPConsoleProject
             Console.CursorVisible = false;
 
             sceneDic = new();
-            sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("Title", new TitleSceneToStart());
             sceneDic.Add("Made By", new MadeBy());
+            sceneDic.Add("Map", new Map());
 
             curScene = sceneDic["Title"];
         }
