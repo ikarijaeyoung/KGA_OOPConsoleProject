@@ -20,7 +20,7 @@ namespace KGA_OOPConsoleProject.Scenes
 
         public override void Update()
         {
-            Game.ChangeScene("Title");
+            Game.ChangeScene("TitleSceneToStart");
         }
     }
 }

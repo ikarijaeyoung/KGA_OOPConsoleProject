@@ -36,11 +36,12 @@ namespace KGA_OOPConsoleProject
             Console.CursorVisible = false;
 
             sceneDic = new();
-            sceneDic.Add("Title", new TitleSceneToStart());
-            sceneDic.Add("Made By", new TitleSceneToMadeBy());
+            sceneDic.Add("TitleSceneToStart", new TitleSceneToStart());
+            sceneDic.Add("TitleSceneToMadeBy", new TitleSceneToMadeBy());
+            sceneDic.Add("Made By", new MadeBy());
             sceneDic.Add("Map", new Map());
 
-            curScene = sceneDic["Title"];
+            curScene = sceneDic["TitleSceneToStart"];
         }
 
         public static void End()
