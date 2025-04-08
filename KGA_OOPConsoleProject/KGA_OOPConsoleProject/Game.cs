@@ -13,13 +13,17 @@ namespace KGA_OOPConsoleProject
         private static bool gameOver;
         private static Dictionary<string, Scene> sceneDic;
         private static Scene curScene;
+
+        private static Player player;
+        public static Player Player { get { return player; } }
+
         public static void Run()
         {
             Start();
 
             while(gameOver == false)
             {
-                Console.Clear();
+                Console.SetCursorPosition(0, 0);
 
                 curScene.Render();
                 curScene.Input();
@@ -34,6 +38,7 @@ namespace KGA_OOPConsoleProject
         {
             gameOver = false;
             Console.CursorVisible = false;
+            player = new();
 
             sceneDic = new();
             sceneDic.Add("TitleSceneToStart", new TitleSceneToStart());
@@ -42,6 +47,7 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("Map", new Map());
 
             curScene = sceneDic["TitleSceneToStart"];
+
         }
 
         public static void End()

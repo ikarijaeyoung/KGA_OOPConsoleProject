@@ -30,11 +30,14 @@
                     map[y, x] = mapData[y][x] == '■' ? false : true;
                 }
             }
+
+            Game.Player.position = new Vector2(2, 1);
         }
 
         public override void Render()
         {
             PrintMap();
+            Game.Player.PrintPlayer();
         }
         public override void Input()
         {
@@ -43,7 +46,7 @@
 
         public override void Update()
         {
-
+            Game.Player.Move(input);
         }
 
         private void PrintMap()

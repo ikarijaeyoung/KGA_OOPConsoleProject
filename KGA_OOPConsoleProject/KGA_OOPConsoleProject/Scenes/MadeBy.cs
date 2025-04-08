@@ -11,6 +11,7 @@ namespace KGA_OOPConsoleProject.Scenes
 
         public override void Render()
         {
+            Console.Clear();
             Console.WriteLine("\t만든이 : 정재영");
         }
         public override void Input()
@@ -20,6 +21,7 @@ namespace KGA_OOPConsoleProject.Scenes
 
         public override void Update()
         {
+            Console.Clear();
             Game.ChangeScene("TitleSceneToStart");
         }
     }
