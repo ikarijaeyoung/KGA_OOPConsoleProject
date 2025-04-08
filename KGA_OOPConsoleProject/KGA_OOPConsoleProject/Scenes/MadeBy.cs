@@ -24,5 +24,10 @@ namespace KGA_OOPConsoleProject.Scenes
             Console.Clear();
             Game.ChangeScene("TitleSceneToStart");
         }
+
+        public override void Result()
+        {
+            
+        }
     }
 }

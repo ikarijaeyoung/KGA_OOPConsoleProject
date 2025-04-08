@@ -21,7 +21,7 @@ namespace KGA_OOPConsoleProject.Maps
             {
                 "####################", //20개
                 "#                  #",
-                "#                  #",
+                "O                  #",
                 "#                  #",
                 "####################"
             };
@@ -35,6 +35,9 @@ namespace KGA_OOPConsoleProject.Maps
                 }
             }
 
+            gameObjects = [new Portal("Map", new Vector2(0, 2))];
+            // gameObjects = [new Key("Key", new Vector2(10, 1))];
+
             Game.Player.position = new Vector2(2, 2);
             Game.Player.map = map;
         }
@@ -42,6 +45,7 @@ namespace KGA_OOPConsoleProject.Maps
         public override void Render()
         {
             PrintMap();
+            Console.WriteLine("\tLevel : 1");
             foreach (GameObject gameObject in gameObjects)
             {
                 gameObject.Print();
@@ -57,6 +61,18 @@ namespace KGA_OOPConsoleProject.Maps
         public override void Update()
         {
             Game.Player.Move(input);
+        }
+        public override void Result()
+        {
+            foreach (GameObject gameObject in gameObjects)
+            {
+                if (gameObject.position.y == Game.Player.position.y
+                    && gameObject.position.x == Game.Player.position.x)
+                {
+                    Console.Clear();
+                    gameObject.Interact(Game.Player);
+                }
+            }
         }
 
         private void PrintMap()

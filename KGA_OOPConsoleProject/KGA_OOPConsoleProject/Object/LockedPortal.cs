@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject.Object
 {
-    public class Portal : GameObject
+    public class LockedPortal : GameObject
     {
-        private string scene;
-        public Portal(string scene, Vector2 position) : base(position, ConsoleColor.Blue, 'O')
+        
+        public LockedPortal(Vector2 position) : base(position, ConsoleColor.DarkBlue, '0')
         {
-            this.scene = scene;
+            
         }
 
         public override void Interact(Player player)
         {
-            Game.ChangeScene(scene);
+            
         }
     }
 }

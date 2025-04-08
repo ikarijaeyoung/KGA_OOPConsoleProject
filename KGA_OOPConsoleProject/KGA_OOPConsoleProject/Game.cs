@@ -28,6 +28,7 @@ namespace KGA_OOPConsoleProject
                 curScene.Render();
                 curScene.Input();
                 curScene.Update();
+                curScene.Result();
             }
 
             End();

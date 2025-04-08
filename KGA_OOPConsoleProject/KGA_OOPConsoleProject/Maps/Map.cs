@@ -30,9 +30,8 @@ namespace KGA_OOPConsoleProject.Maps
                 }
             }
 
-            gameObjects = new List<GameObject>();
-            gameObjects.Add(new Portal("Level01", new Vector2(16, 2), ConsoleColor.Blue, 'O'));
-            
+            gameObjects = [new Portal("Level01", new Vector2(16, 2))];
+
             Game.Player.position = new Vector2(2, 2);
             Game.Player.map = map;
 
@@ -41,6 +40,7 @@ namespace KGA_OOPConsoleProject.Maps
         public override void Render()
         {
             PrintMap();
+            Console.WriteLine("\n방향키로 움직이세요.");
             foreach (GameObject gameObject in gameObjects)
             {
                 gameObject.Print();
@@ -55,6 +55,19 @@ namespace KGA_OOPConsoleProject.Maps
         public override void Update()
         {
             Game.Player.Move(input);
+        }
+
+        public override void Result()
+        {
+            foreach (GameObject gameObject in gameObjects)
+            {
+                if (gameObject.position.y == Game.Player.position.y
+                    && gameObject.position.x == Game.Player.position.x)
+                {
+                    Console.Clear();
+                    gameObject.Interact(Game.Player);
+                }
+            }
         }
 
         private void PrintMap()

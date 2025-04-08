@@ -35,5 +35,10 @@ namespace KGA_OOPConsoleProject.Scenes
                     break;
             }
         }
+
+        public override void Result()
+        {
+            
+        }
     }
 }
