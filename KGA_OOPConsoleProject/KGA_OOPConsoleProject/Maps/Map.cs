@@ -1,4 +1,6 @@
-﻿namespace KGA_OOPConsoleProject.Maps
+﻿using KGA_OOPConsoleProject.Object;
+
+namespace KGA_OOPConsoleProject.Maps
 {
     public class Map : Scene
     {
@@ -6,23 +8,20 @@
         private string[] mapData;
         private bool[,] map;
 
+        private List<GameObject> gameObjects;
+
         public Map()
         {
             mapData = new string[]
             {
-                "##########", //10개
-                "#        #",
-                "#        #",
-                "#        #",
-                "#        #",
-                "#        #",
-                "#        #",
-                "#        #",
-                "#        #",
-                "##########"
+                "####################", //20개
+                "#                  #",
+                "#                  #",
+                "#                  #",
+                "####################"
             };
 
-            map = new bool[10, 10];
+            map = new bool[5, 20];
             for (int y = 0; y < map.GetLength(0); y++)
             {
                 for (int x = 0; x < map.GetLength(1); x++)
@@ -31,13 +30,21 @@
                 }
             }
 
-            Game.Player.position = new Vector2(8, 1);
+            gameObjects = new List<GameObject>();
+            gameObjects.Add(new Portal("Level01", new Vector2(16, 2), ConsoleColor.Blue, 'O'));
+            
+            Game.Player.position = new Vector2(2, 2);
             Game.Player.map = map;
+
         }
 
         public override void Render()
         {
             PrintMap();
+            foreach (GameObject gameObject in gameObjects)
+            {
+                gameObject.Print();
+            }
             Game.Player.PrintPlayer();
         }
         public override void Input()

@@ -45,6 +45,7 @@ namespace KGA_OOPConsoleProject
             sceneDic.Add("TitleSceneToMadeBy", new TitleSceneToMadeBy());
             sceneDic.Add("Made By", new MadeBy());
             sceneDic.Add("Map", new Map());
+            sceneDic.Add("Level01", new Level01());
 
             curScene = sceneDic["TitleSceneToStart"];
 
