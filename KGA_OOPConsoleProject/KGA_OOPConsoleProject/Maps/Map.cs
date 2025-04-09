@@ -7,9 +7,21 @@ namespace KGA_OOPConsoleProject.Maps
         private ConsoleKey input;
         protected string[] mapData;
         protected bool[,] map;
-        
+
 
         protected List<GameObject> gameObjects;
+
+        public abstract void initMap();
+        public abstract void initGameObject();
+
+        public abstract void initPlayer();
+
+        public void Reset()
+        {
+            initMap();
+            initGameObject();
+            initPlayer();
+        }
 
         public override void Render()
         {
@@ -28,6 +40,14 @@ namespace KGA_OOPConsoleProject.Maps
         public override void Update()
         {
             Game.Player.Move(input);
+            switch (input)
+            {
+                case ConsoleKey.R:
+                    Reset();
+                    Console.Clear();
+                    Render();
+                    break;
+            }
         }
 
         public override void Result()
@@ -55,7 +75,9 @@ namespace KGA_OOPConsoleProject.Maps
                     }
                     else
                     {
+                        Console.BackgroundColor = ConsoleColor.Gray;
                         Console.Write('#');
+                        Console.ResetColor();
                     }
                 }
                 Console.WriteLine();

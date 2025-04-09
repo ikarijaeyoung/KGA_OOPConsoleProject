@@ -16,6 +16,7 @@
         {
             // Vector2 nextPos = position; 이전에 이거 썼다가 오류남
             Vector2 nextPos = new Vector2(position.x, position.y);
+            Vector2 overPos = new Vector2(nextPos.x+1, nextPos.y+1);
 
             switch (input)
             {

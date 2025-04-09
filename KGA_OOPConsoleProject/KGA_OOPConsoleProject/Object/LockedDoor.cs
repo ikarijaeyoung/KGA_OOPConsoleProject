@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject.Object
 {
-    public class LockedPortal : GameObject
+    public class LockedDoor : GameObject
     {
         
-        public LockedPortal(Vector2 position) : base(position, ConsoleColor.DarkBlue, '0')
+        public LockedDoor(Vector2 position) : base(position, ConsoleColor.DarkBlue, '0')
         {
             
         }

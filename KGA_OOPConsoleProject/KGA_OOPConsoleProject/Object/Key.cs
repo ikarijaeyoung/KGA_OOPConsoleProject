@@ -2,7 +2,7 @@
 {
     public class Key : GameObject
     {
-        public Key(Vector2 position) : base(position, ConsoleColor.Yellow, 'K')
+        public Key(Vector2 position) : base(position, ConsoleColor.Yellow, '*')
         {
 
         }
@@ -11,5 +11,11 @@
         {
             
         }
+
+        public void Use()
+        {
+
+        }
+
     }
 }

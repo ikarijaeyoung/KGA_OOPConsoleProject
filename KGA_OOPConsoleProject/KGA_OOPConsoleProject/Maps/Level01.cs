@@ -6,6 +6,10 @@ namespace KGA_OOPConsoleProject.Maps
     {
         public Level01()
         {
+            Reset();
+        }
+        public override void initMap()
+        {
             name = "Level01";
 
             mapData = new string[]
@@ -25,26 +29,16 @@ namespace KGA_OOPConsoleProject.Maps
                     map[y, x] = mapData[y][x] == '#' ? false : true;
                 }
             }
-
-            Game.Player.position = new Vector2(1, 2);
+        }
+        public override void initGameObject()
+        {
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Portal("Level02", new Vector2(19, 2)));
-
         }
 
-        public override void Enter()
+        public override void initPlayer()
         {
-            Console.Clear();
-            if (Game.prevSceneName == "TitleSceneToStart")
-            {
-                Game.Player.position = new Vector2(2, 2);
-            }
-            else if (Game.prevSceneName == "Level02")
-            { 
-                Game.Player.position = new Vector2(17, 2);
-            }
-
-            Game.Player.map = map;
+            Game.Player.position = new Vector2(1, 2);
         }
 
         public override void Render()
@@ -58,6 +52,20 @@ namespace KGA_OOPConsoleProject.Maps
             Game.Player.PrintPlayer();
         }
 
+        public override void Enter()
+        {
+            Console.Clear();
+            if (Game.prevSceneName == "TitleSceneToStart")
+            {
+                Game.Player.position = new Vector2(1, 2);
+            }
+            else if (Game.prevSceneName == "Level02")
+            {
+                Game.Player.position = new Vector2(18, 2);
+            }
+
+            Game.Player.map = map;
+        }
 
     }
 }

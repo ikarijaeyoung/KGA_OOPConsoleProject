@@ -11,6 +11,10 @@ namespace KGA_OOPConsoleProject.Maps
     {
         public Level02()
         {
+            Reset();
+        }
+        public override void initMap()
+        {
             name = "Level02";
             mapData = new string[]
             {
@@ -29,13 +33,29 @@ namespace KGA_OOPConsoleProject.Maps
                     map[y, x] = mapData[y][x] == '#' ? false : true;
                 }
             }
-
+        }
+        public override void initGameObject()
+        {
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Portal("Level01", new Vector2(0, 2)));
             gameObjects.Add(new Portal("Level03", new Vector2(19, 2)));
             // gameObjects = [new Key("Key", new Vector2(10, 1))];
         }
+        public override void initPlayer()
+        {
+            Game.Player.position = new Vector2(0, 2);
+        }
 
+        public override void Render()
+        {
+            PrintMap();
+            Console.WriteLine("\n다시하기 : R ");
+            foreach (GameObject gameObject in gameObjects)
+            {
+                gameObject.Print();
+            }
+            Game.Player.PrintPlayer();
+        }
         public override void Enter()
         {
             Console.Clear();
