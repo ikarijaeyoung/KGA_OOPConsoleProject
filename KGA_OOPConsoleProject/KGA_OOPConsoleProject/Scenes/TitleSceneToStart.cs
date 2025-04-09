@@ -28,7 +28,7 @@ namespace KGA_OOPConsoleProject.Scenes
             switch (input)
             {
                 case ConsoleKey.Enter:
-                    Game.ChangeScene("Map");
+                    Game.ChangeScene("Level01");
                     break;
                 case ConsoleKey.DownArrow:
                     Game.ChangeScene("TitleSceneToMadeBy");

@@ -1,27 +1,18 @@
 ﻿using KGA_OOPConsoleProject.Object;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KGA_OOPConsoleProject.Maps
 {
-    public class Level01 : Scene
+    public class Level01 : Map
     {
-        private ConsoleKey input;
-        private string[] mapData;
-        private bool[,] map;
-
-        private List<GameObject> gameObjects;
-
         public Level01()
         {
+            name = "Level01";
+
             mapData = new string[]
             {
                 "####################", //20개
                 "#  #               #",
-                "O                  #",
+                "#    #           O #",
                 "#  #               #",
                 "####################"
             };
@@ -35,17 +26,30 @@ namespace KGA_OOPConsoleProject.Maps
                 }
             }
 
-            gameObjects = [new Portal("Map", new Vector2(0, 2))];
-            // gameObjects = [new Key("Key", new Vector2(10, 1))];
-
             Game.Player.position = new Vector2(1, 2);
+            gameObjects = [new Portal("Level02", new Vector2(17, 2))];
+
+        }
+
+        public override void Enter()
+        {
+            Console.Clear();
+            if (Game.prevSceneName == "TitleSceneToStart")
+            {
+                Game.Player.position = new Vector2(2, 2);
+            }
+            else if (Game.prevSceneName == "Level02")
+            { 
+                Game.Player.position = new Vector2(17, 2);
+            }
+
             Game.Player.map = map;
         }
 
         public override void Render()
         {
             PrintMap();
-            Console.WriteLine("\tLevel : 1");
+            Console.WriteLine("\n방향키로 움직이세요.");
             foreach (GameObject gameObject in gameObjects)
             {
                 gameObject.Print();
@@ -53,47 +57,6 @@ namespace KGA_OOPConsoleProject.Maps
             Game.Player.PrintPlayer();
         }
 
-        public override void Input()
-        {
-            input = Console.ReadKey(true).Key;
-        }
 
-        public override void Update()
-        {
-            Game.Player.Move(input);
-        }
-        public override void Result()
-        {
-            foreach (GameObject gameObject in gameObjects)
-            {
-                if (gameObject.position.y == Game.Player.position.y
-                    && gameObject.position.x == Game.Player.position.x)
-                {
-                    Console.Clear();
-                    gameObject.Interact(Game.Player);
-                }
-            }
-        }
-
-        private void PrintMap()
-        {
-            Console.SetCursorPosition(0, 0);
-            for (int y = 0; y < map.GetLength(0); y++)
-            {
-                for (int x = 0; x < map.GetLength(1); x++)
-                {
-                    if (map[y, x] == true)
-                    {
-                        Console.Write(' ');
-                    }
-                    else
-                    {
-                        Console.Write('#');
-                    }
-                }
-                Console.WriteLine();
-            }
-
-        }
     }
 }
