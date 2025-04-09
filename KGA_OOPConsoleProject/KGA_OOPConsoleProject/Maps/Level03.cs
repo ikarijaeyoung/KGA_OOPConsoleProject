@@ -16,7 +16,7 @@ namespace KGA_OOPConsoleProject.Maps
             {
                 "####################", //20개
                 "#        #         #",
-                "O        #       O #",
+                "O        #         O",
                 "#        #         #",
                 "####################"
             };
@@ -30,7 +30,9 @@ namespace KGA_OOPConsoleProject.Maps
                 }
             }
 
-            gameObjects = [new Portal("Level02", new Vector2(0, 2))];
+            gameObjects = new List<GameObject>();
+            gameObjects.Add(new Portal("Level02", new Vector2(0, 2)));
+            gameObjects.Add(new Portal("Level02", new Vector2(19, 2))); //임시로 2로 가는 포탈
         }
 
         public override void Enter()

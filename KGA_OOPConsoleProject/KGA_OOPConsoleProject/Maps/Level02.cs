@@ -30,8 +30,9 @@ namespace KGA_OOPConsoleProject.Maps
                 }
             }
 
-            gameObjects = [new Portal("Level01", new Vector2(0, 2))];
-            gameObjects = [new Portal("Level03", new Vector2(17, 2))];
+            gameObjects = new List<GameObject>();
+            gameObjects.Add(new Portal("Level01", new Vector2(0, 2)));
+            gameObjects.Add(new Portal("Level03", new Vector2(19, 2)));
             // gameObjects = [new Key("Key", new Vector2(10, 1))];
         }
 

@@ -27,7 +27,8 @@ namespace KGA_OOPConsoleProject.Maps
             }
 
             Game.Player.position = new Vector2(1, 2);
-            gameObjects = [new Portal("Level02", new Vector2(19, 2))];
+            gameObjects = new List<GameObject>();
+            gameObjects.Add(new Portal("Level02", new Vector2(19, 2)));
 
         }
 
