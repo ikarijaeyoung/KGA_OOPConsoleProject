@@ -20,9 +20,9 @@ namespace KGA_OOPConsoleProject.Maps
             mapData = new string[]
             {
                 "####################", //20개
-                "#                  #",
+                "#  #               #",
                 "O                  #",
-                "#                  #",
+                "#  #               #",
                 "####################"
             };
 
@@ -38,7 +38,7 @@ namespace KGA_OOPConsoleProject.Maps
             gameObjects = [new Portal("Map", new Vector2(0, 2))];
             // gameObjects = [new Key("Key", new Vector2(10, 1))];
 
-            Game.Player.position = new Vector2(2, 2);
+            Game.Player.position = new Vector2(1, 2);
             Game.Player.map = map;
         }
 
