@@ -12,7 +12,7 @@ namespace KGA_OOPConsoleProject.Maps
             {
                 "####################", //20개
                 "#  #               #",
-                "#    #           O #",
+                "#    #             O",
                 "#  #               #",
                 "####################"
             };
@@ -27,7 +27,7 @@ namespace KGA_OOPConsoleProject.Maps
             }
 
             Game.Player.position = new Vector2(1, 2);
-            gameObjects = [new Portal("Level02", new Vector2(17, 2))];
+            gameObjects = [new Portal("Level02", new Vector2(19, 2))];
 
         }
 
