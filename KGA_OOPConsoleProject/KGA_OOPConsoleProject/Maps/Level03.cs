@@ -44,7 +44,7 @@ namespace KGA_OOPConsoleProject.Maps
 
         public override void initPlayer()
         {
-            Game.Player.position = new Vector2(0, 2);
+            Game.Player.position = new Vector2(1, 2);
         }
         public override void Enter()
         {

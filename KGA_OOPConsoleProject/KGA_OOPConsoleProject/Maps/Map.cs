@@ -8,12 +8,10 @@ namespace KGA_OOPConsoleProject.Maps
         protected string[] mapData;
         protected bool[,] map;
 
-
         protected List<GameObject> gameObjects;
 
         public abstract void initMap();
         public abstract void initGameObject();
-
         public abstract void initPlayer();
 
         public void Reset()
@@ -43,8 +41,8 @@ namespace KGA_OOPConsoleProject.Maps
             switch (input)
             {
                 case ConsoleKey.R:
-                    Reset();
                     Console.Clear();
+                    Reset();
                     Render();
                     break;
             }

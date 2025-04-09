@@ -55,16 +55,13 @@ namespace KGA_OOPConsoleProject.Maps
         public override void Enter()
         {
             Console.Clear();
-            if (Game.prevSceneName == "TitleSceneToStart")
-            {
-                Game.Player.position = new Vector2(1, 2);
-            }
-            else if (Game.prevSceneName == "Level02")
+            if (Game.prevSceneName == "Level02")
             {
                 Game.Player.position = new Vector2(18, 2);
             }
+            else { Game.Player.position = new Vector2(1, 2); }
 
-            Game.Player.map = map;
+                    Game.Player.map = map;
         }
 
     }

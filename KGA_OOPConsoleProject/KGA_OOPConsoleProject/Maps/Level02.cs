@@ -43,7 +43,7 @@ namespace KGA_OOPConsoleProject.Maps
         }
         public override void initPlayer()
         {
-            Game.Player.position = new Vector2(0, 2);
+            Game.Player.position = new Vector2(1, 2);
         }
 
         public override void Render()
@@ -65,7 +65,7 @@ namespace KGA_OOPConsoleProject.Maps
             }
             else if (Game.prevSceneName == "Level03")
             {
-                Game.Player.position = new Vector2(17, 2);
+                Game.Player.position = new Vector2(18, 2);
             }
 
             Game.Player.map = map;
