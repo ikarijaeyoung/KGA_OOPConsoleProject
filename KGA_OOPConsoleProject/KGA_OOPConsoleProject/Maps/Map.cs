@@ -19,14 +19,20 @@ namespace KGA_OOPConsoleProject.Maps
             initMap();
             initGameObject();
             initPlayer();
+            Player.hasKey = false;
         }
 
         public override void Render()
         {
             PrintMap();
+            PrintRule();
             foreach (GameObject gameObject in gameObjects)
             {
-                gameObject.Print();
+                if (gameObject.isOnce == false)
+                {
+
+                    gameObject.Print();
+                }
             }
             Game.Player.PrintPlayer();
         }
@@ -80,6 +86,10 @@ namespace KGA_OOPConsoleProject.Maps
                 }
                 Console.WriteLine();
             }
+
+        }
+        protected virtual void PrintRule()
+        {
 
         }
     }

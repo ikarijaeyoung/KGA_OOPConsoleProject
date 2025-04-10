@@ -41,15 +41,9 @@ namespace KGA_OOPConsoleProject.Maps
             Game.Player.position = new Vector2(1, 2);
         }
 
-        public override void Render()
+        protected override void PrintRule()
         {
-            PrintMap();
-            Console.WriteLine("\n방향키로 움직이세요.");
-            foreach (GameObject gameObject in gameObjects)
-            {
-                gameObject.Print();
-            }
-            Game.Player.PrintPlayer();
+            Console.WriteLine("\n방향키로 이동하세요.");
         }
 
         public override void Enter()

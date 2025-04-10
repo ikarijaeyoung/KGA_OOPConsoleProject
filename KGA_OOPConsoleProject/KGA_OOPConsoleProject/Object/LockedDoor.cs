@@ -3,18 +3,19 @@
     public class LockedDoor : GameObject
     {
 
-        public LockedDoor(Vector2 position) : base(position, ConsoleColor.DarkBlue, '/')
+        public LockedDoor(Vector2 position) : base(position, ConsoleColor.DarkBlue, '/', false)
         {
 
         }
 
         public override void Interact(Player player)
         {
-            if (player.hasKey == false)
+            if (Player.hasKey == true)
             {
-                player.position = player.prevPos;
+                isOnce = true;
+                // Player.hasKey = false;
             }
-            else { }
+            else { player.position = player.prevPos; }
         }
     }
 }

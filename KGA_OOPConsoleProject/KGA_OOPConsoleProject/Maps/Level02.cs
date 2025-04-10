@@ -46,16 +46,11 @@ namespace KGA_OOPConsoleProject.Maps
             Game.Player.position = new Vector2(1, 2);
         }
 
-        public override void Render()
+        protected override void PrintRule()
         {
-            PrintMap();
-            Console.WriteLine("\n다시하기 : R ");
-            foreach (GameObject gameObject in gameObjects)
-            {
-                gameObject.Print();
-            }
-            Game.Player.PrintPlayer();
+            Console.WriteLine("\n다시하기 : R");
         }
+
         public override void Enter()
         {
             Console.Clear();

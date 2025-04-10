@@ -11,12 +11,14 @@ namespace KGA_OOPConsoleProject.Object
         public Vector2 position;
         public ConsoleColor color;
         public char symbol;
+        public bool isOnce;
 
-        public GameObject(Vector2 position, ConsoleColor color, char symbol)
+        public GameObject(Vector2 position, ConsoleColor color, char symbol, bool isOnce)
         {
             this.position = position;
             this.color = color;
             this.symbol = symbol;
+            this.isOnce = isOnce;
         }
         public void Print()
         {

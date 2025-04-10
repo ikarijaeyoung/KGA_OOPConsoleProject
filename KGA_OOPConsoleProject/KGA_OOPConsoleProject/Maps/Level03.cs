@@ -62,5 +62,18 @@ namespace KGA_OOPConsoleProject.Maps
 
             Game.Player.map = map;
         }
+        protected override void PrintRule()
+        {
+            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("*");
+            Console.ResetColor();
+            Console.Write("을 먹으면 막혀있는 ");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.Write("/");
+            Console.ResetColor();
+            Console.Write("을 열 수 있습니다.");
+        }
     }
+
 }

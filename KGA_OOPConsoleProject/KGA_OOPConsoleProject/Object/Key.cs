@@ -2,20 +2,15 @@
 {
     public class Key : GameObject
     {
-        public Key(Vector2 position) : base(position, ConsoleColor.Yellow, '*')
+        public Key(Vector2 position) : base(position, ConsoleColor.Yellow, '*', false)
         {
 
         }
 
         public override void Interact(Player player)
         {
-            player.hasKey = true;
+            Player.hasKey = true;
+            isOnce = true;
         }
-
-        public void Use()
-        {
-
-        }
-
     }
 }
