@@ -61,7 +61,7 @@ namespace KGA_OOPConsoleProject.Maps
             }
             else { Game.Player.position = new Vector2(1, 2); }
 
-                    Game.Player.map = map;
+            Game.Player.map = map;
         }
 
     }

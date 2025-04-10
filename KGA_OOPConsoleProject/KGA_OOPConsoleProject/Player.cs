@@ -3,7 +3,9 @@
     public class Player
     {
         public Vector2 position;
+        public Vector2 prevPos; 
         public bool[,] map;
+        public bool hasKey = false;
 
         public void PrintPlayer()
         {
@@ -16,21 +18,26 @@
         {
             // Vector2 nextPos = position; 이전에 이거 썼다가 오류남
             Vector2 nextPos = new Vector2(position.x, position.y);
-            Vector2 overPos = new Vector2(nextPos.x+1, nextPos.y+1);
+            // Vector2 overPos = new Vector2(position.x, position.y);
+            prevPos = new Vector2(position.x, position.y);
 
             switch (input)
             {
                 case ConsoleKey.UpArrow:
                     nextPos.y--;
+                    //overPos.y--;
                     break;
                 case ConsoleKey.DownArrow:
                     nextPos.y++;
+                    //overPos.y++;
                     break;
                 case ConsoleKey.LeftArrow:
                     nextPos.x--;
+                    //overPos.x--;
                     break;
                 case ConsoleKey.RightArrow:
                     nextPos.x++;
+                    //overPos.x++;
                     break;
             }
             

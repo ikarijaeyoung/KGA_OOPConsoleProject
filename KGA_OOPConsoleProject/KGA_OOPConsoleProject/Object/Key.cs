@@ -9,7 +9,7 @@
 
         public override void Interact(Player player)
         {
-            
+            player.hasKey = true;
         }
 
         public void Use()

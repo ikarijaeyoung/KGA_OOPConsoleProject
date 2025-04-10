@@ -20,7 +20,7 @@ namespace KGA_OOPConsoleProject.Maps
             {
                 "####################", //20개
                 "#        #         #",
-                "O        0         O",
+                "O        @         O",
                 "#        #         #",
                 "####################"
             };
@@ -39,7 +39,7 @@ namespace KGA_OOPConsoleProject.Maps
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Portal("Level01", new Vector2(0, 2)));
             gameObjects.Add(new Portal("Level03", new Vector2(19, 2)));
-            // gameObjects = [new Key("Key", new Vector2(10, 1))];
+            gameObjects.Add(new Box(new Vector2(10, 2)));
         }
         public override void initPlayer()
         {

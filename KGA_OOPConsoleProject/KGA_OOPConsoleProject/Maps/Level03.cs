@@ -19,8 +19,8 @@ namespace KGA_OOPConsoleProject.Maps
             mapData = new string[]
             {
                 "####################", //20개
-                "#        #         #",
-                "O        #         O",
+                "#       *#         #",
+                "O        /         O",
                 "#        #         #",
                 "####################"
             };
@@ -39,6 +39,8 @@ namespace KGA_OOPConsoleProject.Maps
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Portal("Level02", new Vector2(0, 2)));
             gameObjects.Add(new Portal("Level02", new Vector2(19, 2))); //임시로 2로 가는 포탈
+            gameObjects.Add(new LockedDoor(new Vector2(9, 2)));
+            gameObjects.Add(new Key(new Vector2(8, 1)));
         }
 
 
