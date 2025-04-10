@@ -55,9 +55,9 @@ namespace KGA_OOPConsoleProject.Maps
             {
                 Game.Player.position = new Vector2(0, 2);
             }
-            // else if (Game.prevSceneName == "Level03")
+            // else if (Game.prevSceneName == "Level04")
             // {
-            //     Game.Player.position = new Vector2(17, 2);
+            //     Game.Player.position = new Vector2(18, 2);
             // }
 
             Game.Player.map = map;

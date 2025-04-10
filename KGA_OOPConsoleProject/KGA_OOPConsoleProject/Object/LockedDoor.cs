@@ -1,4 +1,6 @@
-﻿namespace KGA_OOPConsoleProject.Object
+﻿using KGA_OOPConsoleProject.Maps;
+
+namespace KGA_OOPConsoleProject.Object
 {
     public class LockedDoor : GameObject
     {
@@ -13,9 +15,12 @@
             if (Player.hasKey == true)
             {
                 isOnce = true;
-                // Player.hasKey = false;
+                Player.hasKey = false;
             }
-            else { player.position = player.prevPos; }
+            else 
+            { 
+                player.position = player.prevPos;
+            }
         }
     }
 }

@@ -28,11 +28,7 @@ namespace KGA_OOPConsoleProject.Maps
             PrintRule();
             foreach (GameObject gameObject in gameObjects)
             {
-                if (gameObject.isOnce == false)
-                {
-
-                    gameObject.Print();
-                }
+                gameObject.Print();
             }
             Game.Player.PrintPlayer();
         }
@@ -62,6 +58,11 @@ namespace KGA_OOPConsoleProject.Maps
                     && gameObject.position.x == Game.Player.position.x)
                 {
                     gameObject.Interact(Game.Player);
+                    if (gameObject.isOnce == true)
+                    {
+                        gameObjects.Remove(gameObject);
+                    }
+                    break;
                 }
             }
         }
